@@ -6,6 +6,7 @@ const bodyParser = require('body-parser')
 
 const routeProducts = require('./routes/products')
 const routeDemands = require('./routes/demands')
+const routeUsers = require('./routes/users')
 
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended: false})) // APENAS DADOS SIMPLES
@@ -27,6 +28,7 @@ app.use((req, res, next) =>{
 
 app.use('/products', routeProducts)
 app.use('/demands', routeDemands)
+app.use('/users', routeUsers)
 
 app.use((req, res, next) =>{
    const erro = new Error('Not found')
